@@ -1,5 +1,5 @@
-FROM python:3.6-slim-buster
 
+FROM python:3.9-slim-bullseye
 RUN apt-get update && apt-get install -qq -y \
     build-essential libpq-dev --no-install-recommends
 
