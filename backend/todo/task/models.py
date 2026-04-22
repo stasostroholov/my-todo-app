@@ -11,9 +11,10 @@ class Task(db.Model):
         self.task = data.get('task').strip()
         self.status = 0
 
-class TaskSchema(ma.Schema):
+class TaskSchema(ma.SQLAlchemyAutoSchema): # Змінюємо ma.Schema на ma.SQLAlchemyAutoSchema
     class Meta:
-        fields = ('id', 'task', 'status')
+        model = Task # Обов'язково вказуємо модель
+        load_instance = True # Дозволяє Marshmallow створювати об'єкти Task
 
 task_schema = TaskSchema()
 tasks_schema = TaskSchema(many=True)
