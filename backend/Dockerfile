@@ -14,5 +14,4 @@ RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 
 COPY . .
-
-CMD gunicorn --worker-class=eventlet --log-level debug --access-logfile /var/log/todo/gunicorn-access.log --error-logfile /var/log/todo/gunicorn-error.log --bind 0.0.0.0:8000 "todo.app:create_app()" 
+CMD ["gunicorn", "--bind", "0.0.0.0:8000", "todo.app:create_app()"]
