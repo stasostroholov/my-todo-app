@@ -13,7 +13,7 @@ const TodoList = ({ setTodo, filteredTodos }) => {
                     filteredTodos.map((todo) => (
                         <Todo key={todo.id} todo={todo} setTodo={setTodo} />
                     )) :
-                    <Alert variant="info">Сучка шлюха</Alert>
+                    <Alert variant="info">to do!!</Alert>
                 }
             </ListGroup>
         </div>
